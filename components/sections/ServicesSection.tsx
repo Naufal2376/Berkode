@@ -17,48 +17,48 @@ const services = [
     icon: Code2,
     title: "Web Development",
     description:
-      "High-performance websites built with modern technologies like Next.js, React, and TypeScript.",
-    features: ["Custom Development", "E-Commerce", "Web Apps"],
+      "Kami bikin website yang cepat dan responsif pakai teknologi terkini seperti Next.js dan React. Dari landing page sampai aplikasi web kompleks, kami siap.",
+    features: ["Website Kustom", "Toko Online", "Web App"],
     gradient: "from-neon/20 to-transparent",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
     description:
-      "Intuitive interfaces that delight users and drive conversions through thoughtful design.",
-    features: ["User Research", "Prototyping", "Design Systems"],
+      "Desain yang nggak cuma cantik, tapi juga mudah dipakai. Kami fokus sama pengalaman user supaya pengunjung betah dan melakukan apa yang kamu mau.",
+    features: ["Riset User", "Prototype", "Design System"],
     gradient: "from-mid-green/20 to-transparent",
   },
   {
     icon: Smartphone,
-    title: "Mobile Apps",
+    title: "Aplikasi Mobile",
     description:
-      "Native and cross-platform mobile applications for iOS and Android.",
+      "Aplikasi mobile yang berjalan lancar di iOS dan Android. Kami gunakan teknologi terbaru supaya performa maksimal di semua device.",
     features: ["React Native", "Flutter", "PWA"],
     gradient: "from-blue-500/20 to-transparent",
   },
   {
     icon: Search,
-    title: "SEO Optimization",
+    title: "SEO & Visibilitas",
     description:
-      "Boost your online visibility and organic traffic with data-driven SEO strategies.",
-    features: ["Technical SEO", "Content Strategy", "Analytics"],
+      "Bantu website kamu muncul di halaman pertama Google. Strategi SEO yang tepat sasaran biar pengunjung organik terus bertambah.",
+    features: ["SEO Teknis", "Strategi Konten", "Analytics"],
     gradient: "from-purple-500/20 to-transparent",
   },
   {
     icon: Zap,
-    title: "Performance",
+    title: "Performa Optimal",
     description:
-      "Lightning-fast load times and optimized core web vitals for better user experience.",
-    features: ["Speed Optimization", "CDN Setup", "Caching"],
+      "Website yang lambat bakal bikin pengunjung kabur. Kami pastikan website kamu super cepat dan responsif di semua kondisi.",
+    features: ["Optimasi Kecepatan", "CDN", "Caching"],
     gradient: "from-yellow-500/20 to-transparent",
   },
   {
     icon: Shield,
-    title: "Security",
+    title: "Keamanan",
     description:
-      "Enterprise-grade security implementations for your digital assets.",
-    features: ["SSL", "Security Audits", "Encryption"],
+      "Data pengunjung dan bisnis kamu harus aman. Kami implementasikan keamanan tingkat enterprise supaya tenang.",
+    features: ["SSL Certificate", "Audit Keamanan", "Enkripsi"],
     gradient: "from-red-500/20 to-transparent",
   },
 ]
@@ -98,14 +98,15 @@ export default function ServicesSection() {
           className="text-center"
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-mono text-neon bg-neon/10 rounded-full border border-neon/20">
-            Our Services
+            Layanan Kami
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-            What We <span className="text-neon">Build</span>
+            Yang Kami Tawarkan Buat{" "}
+            <span className="text-neon">Bisnis Kamu</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            From concept to deployment, we deliver end-to-end digital solutions
-            that drive results.
+            Paket lengkap dari web development sampai design yang bikin bisnis
+            kamu siap di era digital.
           </p>
         </motion.div>
       </div>

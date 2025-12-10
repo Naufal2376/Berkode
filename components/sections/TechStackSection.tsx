@@ -78,11 +78,11 @@ export default function TechStackSection() {
             Tech Stack
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-            Tools We <span className="text-neon">Master</span>
+            Teknologi yang Kami <span className="text-neon">Kuasai</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            We leverage cutting-edge technologies to build scalable, performant
-            applications.
+            Kami pakai teknologi terkini dan proven buat bikin aplikasi yang
+            cepat, scalable, dan reliable.
           </p>
         </motion.div>
       </div>

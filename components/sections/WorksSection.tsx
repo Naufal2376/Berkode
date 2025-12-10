@@ -9,10 +9,10 @@ import Image from "next/image"
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Platform E-Commerce",
     category: "Web Development",
     description:
-      "A modern e-commerce solution with real-time inventory and seamless checkout.",
+      "Toko online modern dengan sistem inventory real-time dan proses checkout yang lancar. Buat jualan online makin gampang.",
     image: "/projects/project-1.jpg",
     color: "#00FF72",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
@@ -21,10 +21,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "Finance Dashboard",
+    title: "Dashboard Keuangan",
     category: "UI/UX Design",
     description:
-      "Comprehensive financial analytics dashboard with real-time data visualization.",
+      "Dashboard analitik keuangan yang kompleks tapi mudah dipakai. Data visualisasi real-time buat monitoring bisnis lebih mudah.",
     image: "/projects/project-2.jpg",
     color: "#00844F",
     tags: ["React", "D3.js", "TypeScript"],
@@ -33,10 +33,10 @@ const projects = [
   },
   {
     id: 3,
-    title: "Health & Fitness App",
+    title: "Aplikasi Fitness",
     category: "Mobile App",
     description:
-      "Cross-platform fitness tracking app with AI-powered workout recommendations.",
+      "Aplikasi tracking fitness yang berjalan di iOS dan Android. AI memberikan rekomendasi workout yang cocok buat kamu.",
     image: "/projects/project-3.jpg",
     color: "#4F46E5",
     tags: ["React Native", "Firebase", "TensorFlow"],
@@ -45,10 +45,10 @@ const projects = [
   },
   {
     id: 4,
-    title: "SaaS Landing Page",
+    title: "Landing Page SaaS",
     category: "Web Development",
     description:
-      "High-converting landing page with micro-interactions and smooth animations.",
+      "Landing page yang convert tinggi dengan animasi halus dan interaksi yang engaging. Buat calon customer tertarik.",
     image: "/projects/project-4.jpg",
     color: "#EC4899",
     tags: ["Next.js", "Framer Motion", "Tailwind"],
@@ -57,10 +57,10 @@ const projects = [
   },
   {
     id: 5,
-    title: "Real Estate Platform",
+    title: "Platform Real Estate",
     category: "Full Stack",
     description:
-      "Property listing platform with virtual tours and advanced search filters.",
+      "Platform listing properti dengan virtual tour dan filter pencarian yang canggih. Calon pembeli bisa explore dengan mudah.",
     image: "/projects/project-5.jpg",
     color: "#F59E0B",
     tags: ["Next.js", "Prisma", "MapBox"],
@@ -93,16 +93,16 @@ export default function WorksSection() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-mono text-neon bg-neon/10 rounded-full border border-neon/20">
-            Selected Work
+            Portfolio Kami
           </span>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-                Projects That <span className="text-neon">Speak</span>
+                Karya yang <span className="text-neon">Bercerita</span>
               </h2>
               <p className="text-gray-400 text-lg max-w-xl">
-                A showcase of our finest work, demonstrating our expertise in
-                creating impactful digital experiences.
+                Portfolio terbaik kami yang menunjukin gimana kami bikin
+                pengalaman digital yang impactful buat berbagai klien.
               </p>
             </div>
             <motion.a
@@ -111,7 +111,7 @@ export default function WorksSection() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-6 py-3 text-neon border border-neon/30 rounded-lg hover:bg-neon/10 transition-colors"
             >
-              View All Projects
+              Lihat Semua Proyek
               <ExternalLink className="w-4 h-4" />
             </motion.a>
           </div>

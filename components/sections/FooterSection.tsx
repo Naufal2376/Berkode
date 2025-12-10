@@ -18,20 +18,20 @@ const footerLinks = {
   services: [
     { name: "Web Development", href: "#services" },
     { name: "UI/UX Design", href: "#services" },
-    { name: "Mobile Apps", href: "#services" },
-    { name: "SEO Optimization", href: "#services" },
+    { name: "Aplikasi Mobile", href: "#services" },
+    { name: "SEO & Visibilitas", href: "#services" },
   ],
   company: [
-    { name: "About Us", href: "#" },
-    { name: "Our Work", href: "#work" },
-    { name: "Careers", href: "#" },
+    { name: "Tentang Kami", href: "#" },
+    { name: "Portofolio", href: "#work" },
+    { name: "Karir", href: "#" },
     { name: "Blog", href: "#" },
   ],
   resources: [
-    { name: "Documentation", href: "#" },
+    { name: "Dokumentasi", href: "#" },
     { name: "Case Studies", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+    { name: "Syarat & Ketentuan", href: "#" },
+    { name: "Kebijakan Privasi", href: "#" },
   ],
 }
 
@@ -73,9 +73,9 @@ export default function FooterSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6"
             >
-              Ready to upgrade your
+              Siap buat bisnis kamu
               <br />
-              <span className="text-neon">digital presence?</span>
+              <span className="text-neon">go digital?</span>
             </motion.h2>
 
             <motion.p
@@ -85,8 +85,8 @@ export default function FooterSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-400 text-lg max-w-2xl mx-auto mb-10"
             >
-              Let&apos;s collaborate and build something extraordinary together.
-              Your vision, our expertise.
+              Mari kita kolaborasi dan wujudkan ide digital kamu jadi nyata.
+              Visi kamu, expertise kami.
             </motion.p>
 
             {/* Email CTA */}
@@ -152,8 +152,8 @@ export default function FooterSection() {
                 </span>
               </div>
               <p className="text-gray-400 text-sm mb-6">
-                Architecting digital excellence through innovative web solutions
-                and stunning UI/UX design.
+                Tim kreatif yang bikin website dan UI/UX design berkualitas
+                dengan harga terjangkau untuk mahasiswa, UMKM, dan startup.
               </p>
               {/* Social Links */}
               <div className="flex gap-3">
@@ -183,7 +183,7 @@ export default function FooterSection() {
 
             {/* Services */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Services</h4>
+              <h4 className="font-semibold text-white mb-4">Layanan</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
@@ -200,7 +200,7 @@ export default function FooterSection() {
 
             {/* Company */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Company</h4>
+              <h4 className="font-semibold text-white mb-4">Perusahaan</h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
@@ -217,7 +217,7 @@ export default function FooterSection() {
 
             {/* Resources */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Resources</h4>
+              <h4 className="font-semibold text-white mb-4">Lainnya</h4>
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>

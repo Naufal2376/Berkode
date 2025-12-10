@@ -174,7 +174,7 @@ export default function HeroSection() {
   const mouseY = useMotionValue(0.5)
 
   const { displayedText, isComplete } = useTypingEffect(
-    "We craft high-performance websites & intuitive UI/UX.",
+    "Kami bikin website cepat, desain yang user-friendly, dan harga terjangkau.",
     40,
     1500
   )
@@ -218,7 +218,7 @@ export default function HeroSection() {
         >
           <Sparkles className="w-4 h-4 text-neon" />
           <span className="text-sm text-gray-300 font-medium">
-            Web Development & UI/UX Agency
+            Web Development & UI/UX untuk Bisnis Kreatif
           </span>
         </motion.div>
 
@@ -229,7 +229,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-6"
         >
-          Architecting{" "}
+          Wujudkan Ide{" "}
           <span className="relative">
             <span className="text-neon">Digital</span>
             <motion.span
@@ -241,7 +241,7 @@ export default function HeroSection() {
             />
           </span>
           <br />
-          Excellence.
+          Kamu Jadi Nyata.
         </motion.h1>
 
         {/* Sub-headline with typing effect */}
@@ -282,7 +282,7 @@ export default function HeroSection() {
               "shadow-lg shadow-neon/25 transition-all duration-300"
             )}
           >
-            View Our Work
+            Mulai Sekarang
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
@@ -297,7 +297,7 @@ export default function HeroSection() {
               "hover:border-neon/50 hover:bg-deep-navy/50 transition-all duration-300"
             )}
           >
-            Our Services
+            Lihat Layanan
           </motion.a>
         </motion.div>
 
