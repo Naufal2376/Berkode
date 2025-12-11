@@ -263,6 +263,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* CTA Buttons */}
+        {/* CTA Buttons - UPDATED */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -270,7 +271,8 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href="#work"
+            href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20bikin%20website"
+            target="_blank"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 30px rgba(0, 255, 114, 0.4)",
@@ -282,12 +284,12 @@ export default function HeroSection() {
               "shadow-lg shadow-neon/25 transition-all duration-300"
             )}
           >
-            Mulai Sekarang
+            Konsultasi Gratis
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
           <motion.a
-            href="#services"
+            href="#work"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={cn(
@@ -297,38 +299,9 @@ export default function HeroSection() {
               "hover:border-neon/50 hover:bg-deep-navy/50 transition-all duration-300"
             )}
           >
-            Lihat Layanan
+            Lihat Portfolio
           </motion.a>
         </motion.div>
-
-        {/* Scroll indicator */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2 text-gray-500"
-          >
-            <span className="text-xs font-mono uppercase tracking-widest">
-              Scroll
-            </span>
-            <div className="w-6 h-10 rounded-full border-2 border-gray-600 flex justify-center pt-2">
-              <motion.div
-                animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-1.5 h-1.5 rounded-full bg-neon"
-              />
-            </div>
-          </motion.div>
-        </motion.div> */}
       </div>
     </section>
   )
