@@ -1,89 +1,53 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
+// Updated Projects Data based on your links
 const projects = [
   {
     id: 1,
-    title: "Platform E-Commerce",
-    category: "Web Development",
+    title: "Pempek Techi Palembang",
+    category: "UMKM / Food & Beverage",
     description:
-      "Toko online modern dengan sistem inventory real-time dan proses checkout yang lancar. Buat jualan online makin gampang.",
-    image: "/projects/project-1.jpg",
-    color: "#00FF72",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
-    link: "#",
-    github: "#",
+      "Website katalog digital untuk bisnis kuliner lokal. Desain visual yang menggugah selera dengan integrasi pemesanan WhatsApp otomatis untuk meningkatkan konversi penjualan.",
+    image: "/projects/pempek-techi.png", // Pastikan upload screenshot webnya ke folder public/projects
+    color: "#F59E0B", // Warna Orange/Gold (Makanan)
+    tags: ["Next.js", "Tailwind CSS", "WhatsApp API"],
+    link: "https://pempek-techi-palembang.vercel.app/",
+    github: "#", // Isi link github jika ada, atau biarkan #
   },
   {
     id: 2,
-    title: "Dashboard Keuangan",
-    category: "UI/UX Design",
+    title: "Para Laundry",
+    category: "Service Business",
     description:
-      "Dashboard analitik keuangan yang kompleks tapi mudah dipakai. Data visualisasi real-time buat monitoring bisnis lebih mudah.",
-    image: "/projects/project-2.jpg",
-    color: "#00844F",
-    tags: ["React", "D3.js", "TypeScript"],
-    link: "#",
+      "Landing page modern untuk usaha jasa laundry. Menampilkan daftar layanan dan harga dengan desain 'Clean UI' yang membangun kepercayaan dan memudahkan pelanggan mencari informasi.",
+    image: "/projects/para-laundry.png", // Pastikan upload screenshot webnya
+    color: "#3B82F6", // Warna Biru (Kebersihan/Air)
+    tags: ["React", "Framer Motion", "Responsive Design"],
+    link: "https://para-laundry.vercel.app/",
     github: "#",
   },
   {
     id: 3,
-    title: "Aplikasi Fitness",
-    category: "Mobile App",
+    title: "Resep Naks Kost",
+    category: "Web App / Lifestyle",
     description:
-      "Aplikasi tracking fitness yang berjalan di iOS dan Android. AI memberikan rekomendasi workout yang cocok buat kamu.",
-    image: "/projects/project-3.jpg",
-    color: "#4F46E5",
-    tags: ["React Native", "Firebase", "TensorFlow"],
-    link: "#",
-    github: "#",
-  },
-  {
-    id: 4,
-    title: "Landing Page SaaS",
-    category: "Web Development",
-    description:
-      "Landing page yang convert tinggi dengan animasi halus dan interaksi yang engaging. Buat calon customer tertarik.",
-    image: "/projects/project-4.jpg",
-    color: "#EC4899",
-    tags: ["Next.js", "Framer Motion", "Tailwind"],
-    link: "#",
-    github: "#",
-  },
-  {
-    id: 5,
-    title: "Platform Real Estate",
-    category: "Full Stack",
-    description:
-      "Platform listing properti dengan virtual tour dan filter pencarian yang canggih. Calon pembeli bisa explore dengan mudah.",
-    image: "/projects/project-5.jpg",
-    color: "#F59E0B",
-    tags: ["Next.js", "Prisma", "MapBox"],
-    link: "#",
+      "Platform pencari resep masakan praktis dan hemat budget. Solusi kreatif untuk mahasiswa dengan fitur filter bahan masakan sederhana dan estimasi harga yang terjangkau.",
+    image: "/projects/resep-naks-kost.png", // Pastikan upload screenshot webnya
+    color: "#10B981", // Warna Hijau (Segar/Hemat)
+    tags: ["Next.js", "Rest API", "Search Algorithm"],
+    link: "https://resep-naks-kost.vercel.app/",
     github: "#",
   },
 ]
 
 export default function WorksSection() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  })
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"])
-
   return (
-    <section
-      ref={containerRef}
-      id="work"
-      className="relative py-24 overflow-hidden"
-    >
+    <section id="work" className="relative py-24 overflow-hidden">
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <motion.div
@@ -101,8 +65,8 @@ export default function WorksSection() {
                 Karya yang <span className="text-neon">Bercerita</span>
               </h2>
               <p className="text-gray-400 text-lg max-w-xl">
-                Portfolio terbaik kami yang menunjukin gimana kami bikin
-                pengalaman digital yang impactful buat berbagai klien.
+                Beberapa contoh hasil kerja kami membantu UMKM dan ide kreatif
+                menjadi realitas digital yang fungsional.
               </p>
             </div>
             <motion.a
@@ -111,24 +75,24 @@ export default function WorksSection() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-6 py-3 text-neon border border-neon/30 rounded-lg hover:bg-neon/10 transition-colors"
             >
-              Lihat Semua Proyek
+              Mulai Proyek Anda
               <ExternalLink className="w-4 h-4" />
             </motion.a>
           </div>
         </motion.div>
       </div>
 
-      {/* Horizontal Scroll Cards */}
-      <div className="relative">
-        <motion.div style={{ x }} className="flex gap-6 pl-4 sm:pl-8 lg:pl-16">
+      {/* Portfolio Grid - Static without scroll animation */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative shrink-0 w-[85vw] sm:w-[70vw] md:w-[50vw] lg:w-[40vw] xl:w-[35vw]"
+              className="group relative"
             >
               <div
                 className={cn(
@@ -139,15 +103,29 @@ export default function WorksSection() {
                   "hover:shadow-xl hover:shadow-neon/10"
                 )}
               >
-                {/* Project Image */}
+                {/* Project Image Background */}
                 <div className="absolute inset-0 bg-linear-to-br from-deep-green/80 to-deep-navy/80">
-                  {/* Placeholder gradient - replace with actual images */}
+                  {/* You should use Next.js Image component here if you have the files, 
+                      but for background cover effect with dynamic url, a simple img or div is easier for now,
+                      or keep using the gradient placeholder below until you add images */}
+
+                  {/* Placeholder Gradient based on brand color */}
                   <div
-                    className="absolute inset-0 opacity-30"
+                    className="absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-20"
                     style={{
-                      background: `linear-gradient(135deg, ${project.color}20, transparent 50%)`,
+                      background: `linear-gradient(135deg, ${project.color}40, var(--deep-navy))`,
                     }}
                   />
+
+                  {/* Real Image Placeholder (Uncomment when you have images) */}
+                  {/* <Image 
+                    src={project.image} 
+                    alt={project.title}
+                    fill
+                    className="object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+                  /> 
+                  */}
+
                   {/* Grid pattern overlay */}
                   <div
                     className="absolute inset-0 opacity-10"
@@ -159,13 +137,14 @@ export default function WorksSection() {
                 </div>
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 bg-linear-to-t from-deep-navy via-deep-navy/50 to-transparent">
+                <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 bg-linear-to-t from-deep-navy via-deep-navy/80 to-transparent">
                   {/* Category */}
                   <span
-                    className="inline-block w-fit px-3 py-1 mb-3 text-xs font-mono rounded-full"
+                    className="inline-block w-fit px-3 py-1 mb-3 text-xs font-mono rounded-full border border-white/10 backdrop-blur-md"
                     style={{
                       backgroundColor: `${project.color}20`,
                       color: project.color,
+                      borderColor: `${project.color}40`,
                     }}
                   >
                     {project.category}
@@ -177,7 +156,7 @@ export default function WorksSection() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm sm:text-base mb-4 line-clamp-2">
+                  <p className="text-gray-300 text-sm sm:text-base mb-6 line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -186,7 +165,7 @@ export default function WorksSection() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs font-mono text-gray-400 bg-white/5 rounded-md border border-white/10"
+                        className="px-2 py-1 text-xs font-mono text-gray-300 bg-black/20 rounded-md border border-white/10"
                       >
                         {tag}
                       </span>
@@ -197,21 +176,25 @@ export default function WorksSection() {
                   <div className="flex gap-3">
                     <motion.a
                       href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-neon text-deep-green font-semibold text-sm rounded-lg"
+                      className="flex items-center gap-2 px-5 py-2.5 bg-neon text-deep-green font-bold text-sm rounded-lg shadow-lg shadow-neon/20"
                     >
-                      View Project
+                      Kunjungi Website
                       <ExternalLink className="w-4 h-4" />
                     </motion.a>
-                    <motion.a
-                      href={project.github}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center justify-center w-10 h-10 border border-mid-green/30 rounded-lg hover:border-neon/50 hover:bg-neon/10 transition-colors"
-                    >
-                      <Github className="w-5 h-5 text-gray-400" />
-                    </motion.a>
+                    {project.github !== "#" && (
+                      <motion.a
+                        href={project.github}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center justify-center w-10 h-10 border border-mid-green/30 rounded-lg hover:border-neon/50 hover:bg-neon/10 transition-colors bg-black/20"
+                      >
+                        <Github className="w-5 h-5 text-gray-400" />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
 
@@ -219,18 +202,11 @@ export default function WorksSection() {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
-                    boxShadow: `inset 0 0 80px ${project.color}10`,
+                    boxShadow: `inset 0 0 100px ${project.color}20`,
                   }}
                 />
               </div>
             </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Scroll Indicators */}
-        <div className="flex justify-center gap-2 mt-8">
-          {projects.map((_, index) => (
-            <div key={index} className="w-2 h-2 rounded-full bg-mid-green/30" />
           ))}
         </div>
       </div>

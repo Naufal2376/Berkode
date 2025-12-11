@@ -1,15 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import {
-  Code2,
-  Palette,
-  Smartphone,
-  Search,
-  Zap,
-  Shield,
-  ArrowUpRight,
-} from "lucide-react"
+import { Code2, Palette, Smartphone, Check, ArrowUpRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const services = [
@@ -17,49 +9,144 @@ const services = [
     icon: Code2,
     title: "Web Development",
     description:
-      "Kami bikin website yang cepat dan responsif pakai teknologi terkini seperti Next.js dan React. Dari landing page sampai aplikasi web kompleks, kami siap.",
-    features: ["Website Kustom", "Toko Online", "Web App"],
+      "Bangun kehadiran digital Anda dengan website yang cepat, responsif, dan profesional.",
     gradient: "from-neon/20 to-transparent",
+    packages: [
+      {
+        name: "Paket Starter",
+        subtitle:
+          "Cocok untuk landing page sederhana atau kebutuhan tugas kuliah.",
+        price: "Rp 150.000",
+        originalPrice: "Rp 250.000",
+        promo: true,
+        duration: "3 - 5 Hari Kerja",
+        features: [
+          "Static Landing Page",
+          "Desain Responsif (Mobile Friendly)",
+          "Source Code Clean & Revisi 2x",
+        ],
+      },
+      {
+        name: "Paket UMKM Go Digital",
+        subtitle:
+          "Solusi lengkap untuk bisnis yang ingin tampil profesional di internet.",
+        price: "Rp 350.000",
+        duration: "7 - 14 Hari Kerja",
+        features: [
+          "5 Halaman Utama",
+          "SEO Basic & Integrasi Bisnis",
+          "Content Management System (CMS)",
+          "Gratis Hosting & Domain .my.id",
+        ],
+      },
+      {
+        name: "Paket Enterprise",
+        subtitle: "Sistem website kompleks untuk kebutuhan bisnis skala besar.",
+        price: "Contact Us",
+        duration: "1 - 2 Bulan",
+        features: [
+          "Multi-Page Website",
+          "Dynamic Content (CMS)",
+          "Sistem Member & Admin",
+          "Integrasi Payment Gateway",
+          "Keamanan Tingkat Lanjut",
+        ],
+        badge: "Garansi & Support: Bantuan teknis selama 1 bulan",
+      },
+    ],
   },
   {
     icon: Palette,
     title: "UI/UX Design",
     description:
-      "Desain yang nggak cuma cantik, tapi juga mudah dipakai. Kami fokus sama pengalaman user supaya pengunjung betah dan melakukan apa yang kamu mau.",
-    features: ["Riset User", "Prototype", "Design System"],
+      "Desain antarmuka yang menarik dan ramah pengguna untuk aplikasi atau website Anda.",
     gradient: "from-mid-green/20 to-transparent",
+    packages: [
+      {
+        name: "Paket Pixel",
+        subtitle: "Desain cepat untuk kebutuhan dasar.",
+        price: "Rp 150.000",
+        originalPrice: "Rp 250.000",
+        promo: true,
+        duration: "2 - 3 Hari Kerja",
+        features: [
+          "UI/UX Sederhana (Dashboard dan 3 halaman lainnya)",
+          "Redesign Sederhana",
+        ],
+      },
+      {
+        name: "Paket Hover",
+        subtitle: "Desain lebih detail dengan interaksi yang menarik.",
+        price: "Rp 350.000",
+        duration: "3 - 5 Hari Kerja",
+        features: [
+          "UI/UX Medium Complex dengan micro interaction",
+          "Design lebih interaktif & detail",
+          "10+ halaman design",
+        ],
+      },
+      {
+        name: "Paket Startup",
+        subtitle: "Desain komprehensif untuk produk digital yang matang.",
+        price: "Contact Us",
+        duration: "3 Minggu",
+        features: [
+          "UI/UX Complex & Detail",
+          "Design interaktif dengan animasi",
+          "20+ halaman design",
+        ],
+      },
+    ],
   },
   {
     icon: Smartphone,
-    title: "Aplikasi Mobile",
+    title: "Mobile Apps",
     description:
-      "Aplikasi mobile yang berjalan lancar di iOS dan Android. Kami gunakan teknologi terbaru supaya performa maksimal di semua device.",
-    features: ["React Native", "Flutter", "PWA"],
+      "Kembangkan aplikasi mobile Android/iOS yang fungsional dan scalable.",
     gradient: "from-blue-500/20 to-transparent",
-  },
-  {
-    icon: Search,
-    title: "SEO & Visibilitas",
-    description:
-      "Bantu website kamu muncul di halaman pertama Google. Strategi SEO yang tepat sasaran biar pengunjung organik terus bertambah.",
-    features: ["SEO Teknis", "Strategi Konten", "Analytics"],
-    gradient: "from-purple-500/20 to-transparent",
-  },
-  {
-    icon: Zap,
-    title: "Performa Optimal",
-    description:
-      "Website yang lambat bakal bikin pengunjung kabur. Kami pastikan website kamu super cepat dan responsif di semua kondisi.",
-    features: ["Optimasi Kecepatan", "CDN", "Caching"],
-    gradient: "from-yellow-500/20 to-transparent",
-  },
-  {
-    icon: Shield,
-    title: "Keamanan",
-    description:
-      "Data pengunjung dan bisnis kamu harus aman. Kami implementasikan keamanan tingkat enterprise supaya tenang.",
-    features: ["SSL Certificate", "Audit Keamanan", "Enkripsi"],
-    gradient: "from-red-500/20 to-transparent",
+    packages: [
+      {
+        name: "Paket MVP",
+        subtitle:
+          "Wujudkan ide aplikasi menjadi purwarupa yang bisa dijalankan.",
+        price: "Rp 350.000",
+        duration: "5 - 7 Hari Kerja",
+        features: [
+          "Slicing UI Presisi 3 - 5 halaman utama",
+          "Interaksi Dasar",
+          "Data Dummy (Statis)",
+          "File APK Siap Install",
+        ],
+      },
+      {
+        name: "Paket Business App",
+        subtitle:
+          "Aplikasi siap pakai yang terintegrasi dengan sistem backend.",
+        price: "Rp 2.000.000",
+        duration: "3 - 4 Minggu",
+        features: [
+          "Android App (Play Store Ready)",
+          "Integrasi API & Admin Panel Web",
+          "Integrasi Database",
+          "Fitur Notifikasi",
+        ],
+      },
+      {
+        name: "Paket Super App",
+        subtitle:
+          "Ekosistem aplikasi lengkap dengan fitur canggih dan keamanan tinggi.",
+        price: "Contact Us",
+        duration: "1 - 2 Bulan",
+        features: [
+          "Hybrid Development",
+          "Fitur Real-time",
+          "Payment Gateway",
+          "Scalable Backend Server",
+          "Dokumentasi Lengkap",
+        ],
+        badge: "Garansi Bug: Perbaikan error gratis selama 2 bulan",
+      },
+    ],
   },
 ]
 
@@ -68,7 +155,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.15,
     },
   },
 }
@@ -111,13 +198,13 @@ export default function ServicesSection() {
         </motion.div>
       </div>
 
-      {/* Services Grid - Uniform Cards */}
+      {/* Services Grid - 3 Rows (Stacked) */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="max-w-7xl mx-auto space-y-12"
       >
         {services.map((service) => {
           const Icon = service.icon
@@ -126,69 +213,119 @@ export default function ServicesSection() {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className={cn(
-                "group relative rounded-2xl overflow-hidden",
-                "border border-mid-green/20 hover:border-neon/50",
-                "bg-deep-navy/40 backdrop-blur-sm",
-                "transition-all duration-500",
-                "hover:shadow-lg hover:shadow-neon/10"
-              )}
+              className="flex flex-col"
             >
-              {/* Background Gradient */}
-              <div
-                className={cn(
-                  "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-                  `bg-linear-to-br ${service.gradient}`
-                )}
-              />
-
-              {/* Content */}
-              <div className="relative z-10 h-full flex flex-col p-6">
-                {/* Icon */}
+              {/* Category Header */}
+              <div className="mb-8 text-center">
                 <div
                   className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center mb-4",
-                    "bg-neon/10 border border-neon/20",
-                    "group-hover:bg-neon/20 group-hover:scale-110 transition-all duration-300"
+                    "w-14 h-14 rounded-xl mx-auto mb-4",
+                    "bg-neon/10 border border-neon/30",
+                    "flex items-center justify-center"
                   )}
                 >
-                  <Icon className="w-6 h-6 text-neon" />
+                  <Icon className="w-7 h-7 text-neon" />
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {service.title}
                 </h3>
-
-                {/* Description */}
-                <p className="text-gray-400 text-sm mb-4 grow">
+                <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto">
                   {service.description}
                 </p>
-
-                {/* Features */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {service.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="px-2 py-1 text-xs font-mono text-gray-400 bg-white/5 rounded-md"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Learn More Link */}
-                <div className="flex items-center gap-1 text-neon text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
               </div>
 
-              {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="absolute top-4 right-4 w-2 h-2 bg-neon rounded-full" />
-                <div className="absolute top-4 right-8 w-1 h-1 bg-neon/50 rounded-full" />
-                <div className="absolute top-8 right-4 w-1 h-1 bg-neon/50 rounded-full" />
+              {/* Packages - Horizontal Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {service.packages.map((pkg, idx) => (
+                  <motion.div
+                    key={pkg.name}
+                    whileHover={{ y: -4 }}
+                    className={cn(
+                      "relative overflow-hidden rounded-xl border flex flex-col",
+                      "bg-deep-navy/40 backdrop-blur-sm p-6",
+                      "transition-all duration-300",
+                      idx === 1
+                        ? "border-neon/50 shadow-lg shadow-neon/10"
+                        : "border-mid-green/20 hover:border-neon/30"
+                    )}
+                  >
+                    {/* Popular Badge */}
+                    {idx === 1 && (
+                      <div className="absolute top-4 right-4">
+                        <span className="px-3 py-1 text-xs font-bold bg-neon text-deep-navy rounded-full">
+                          POPULER
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Package Name */}
+                    <h4 className="text-lg font-bold text-white mb-1">
+                      {pkg.name}
+                    </h4>
+                    <p className="text-xs text-gray-400 mb-4">{pkg.subtitle}</p>
+
+                    {/* Price */}
+                    <div className="mb-4">
+                      {pkg.promo && pkg.originalPrice ? (
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-2xl font-bold text-neon">
+                            {pkg.price}
+                          </span>
+                          <span className="text-sm text-gray-500 line-through">
+                            {pkg.originalPrice}
+                          </span>
+                          <span className="px-2 py-0.5 text-xs font-bold bg-red-500/20 text-red-400 rounded">
+                            PROMO
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="text-2xl font-bold text-white">
+                          {pkg.price}
+                        </span>
+                      )}
+                      <p className="text-xs text-gray-500 mt-1 font-mono">
+                        ⏱ {pkg.duration}
+                      </p>
+                    </div>
+
+                    {/* Features */}
+                    <ul className="space-y-2 mb-4 flex-1">
+                      {pkg.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2 text-sm text-gray-300"
+                        >
+                          <Check className="w-4 h-4 text-neon shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Badge/Garansi */}
+                    {pkg.badge && (
+                      <div className="pt-4 mb-4 border-t border-mid-green/20">
+                        <p className="text-xs text-neon/80 font-mono">
+                          ✓ {pkg.badge}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* CTA Button - Always at bottom */}
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={cn(
+                        "w-full mt-auto px-4 py-2.5 rounded-lg font-semibold text-sm",
+                        "transition-all duration-300",
+                        idx === 1
+                          ? "bg-neon text-deep-navy hover:shadow-lg hover:shadow-neon/30"
+                          : "border border-neon/30 text-neon hover:bg-neon/10"
+                      )}
+                    >
+                      Pesan Sekarang
+                    </motion.button>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           )
