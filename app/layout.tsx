@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import Navbar from "@/components/layout/Navbar"
+import MotionProvider from "@/components/providers/MotionProvider"
 import { SITE } from "@/lib/site"
 import "./globals.css"
 
@@ -68,6 +69,42 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE.name,
+  legalName: SITE.legalName,
+  url: SITE.url,
+  logo: `${SITE.url}/logo.png`,
+  image: `${SITE.url}/logo.png`,
+  description: SITE.description,
+  telephone: `+${SITE.whatsapp}`,
+  email: SITE.email,
+  priceRange: "Rp 150.000 - Rp 3.000.000+",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: SITE.city,
+    addressRegion: SITE.region,
+    addressCountry: SITE.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -2.9909,
+    longitude: 104.7565,
+  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Palembang",
+    },
+    {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+  ],
+  sameAs: [SITE.socials.instagram, SITE.socials.github].filter(Boolean),
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,11 +112,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <Navbar />
-        <main>{children}</main>
+        <MotionProvider>
+          <Navbar />
+          <main>{children}</main>
+        </MotionProvider>
       </body>
     </html>
   )
