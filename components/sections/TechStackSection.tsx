@@ -109,6 +109,7 @@ export default function TechStackSection() {
             {marqueeItems.map((tech, index) => (
               <div
                 key={`row1-${index}`}
+                aria-hidden={index >= techStack.length ? "true" : undefined}
                 className={cn(
                   "group shrink-0 flex items-center gap-3 px-5 py-3",
                   "rounded-xl border border-mid-green/20",
@@ -127,7 +128,7 @@ export default function TechStackSection() {
         </div>
 
         {/* Second Row - Right to Left */}
-        <div className="flex">
+        <div className="flex" aria-hidden="true">
           <motion.div
             className="flex gap-6"
             animate={{ x: [-100 * techStack.length, 0] }}

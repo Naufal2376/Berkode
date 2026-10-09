@@ -2,31 +2,33 @@
 
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
-import { cn } from "@/lib/utils"
 import Image from "next/image"
 
-// Updated Projects Data based on your links
 const projects = [
   {
     id: 1,
     title: "Pempek Techi Palembang",
     category: "UMKM / Food & Beverage",
+    type: "Sistem & Website",
+    year: "2024",
     description:
       "Sistem manajemen bisnis kuliner yang mencakup Point of Sales (POS), manajemen stok produk, dan laporan keuangan otomatis. Dirancang dengan dashboard admin yang powerful untuk memantau performa bisnis dan pengeluaran secara real-time.",
-    image: "/projects/pempek-techi.png", // Pastikan upload screenshot webnya ke folder public/projects
-    color: "#F59E0B", // Warna Orange/Gold (Makanan)
+    image: "/projects/pempek-techi.png",
+    color: "#F59E0B",
     tags: ["Laravel", "Tailwind CSS", "FilamentPHP", "Livewire", "MySQL"],
     link: "https://pempek-techi-palembang.vercel.app/",
-    github: "https://github.com/GhalibAG/pempek-techi-clean", // Isi link github jika ada, atau biarkan #
+    github: "https://github.com/GhalibAG/pempek-techi-clean",
   },
   {
     id: 2,
     title: "Para Laundry",
     category: "Service Business",
+    type: "Sistem Operasional",
+    year: "2024",
     description:
       "Aplikasi manajemen laundry modern yang memungkinkan pelanggan melacak status pesanan mereka secara real-time melalui kode unik. Dilengkapi dengan sistem autentikasi aman dan dashboard operasional untuk mencatat transaksi serta pengeluaran harian.",
-    image: "/projects/para-laundry.png", // Pastikan upload screenshot webnya
-    color: "#3B82F6", // Warna Biru (Kebersihan/Air)
+    image: "/projects/para-laundry.png",
+    color: "#3B82F6",
     tags: [
       "Next.js",
       "TypeScript",
@@ -41,9 +43,11 @@ const projects = [
     id: 3,
     title: "Resep Naks Kost",
     category: "Web App / Lifestyle",
+    type: "Web Application",
+    year: "2024",
     description: `Platform pencarian resep masakan kreatif yang dikurasi khusus untuk mahasiswa dengan bahan yang hemat dan praktis. Menampilkan antarmuka yang interaktif dengan kategori unik seperti "Mie Series" untuk pengalaman pengguna yang menyenangkan.`,
-    image: "/projects/resep-naks-kost.png", // Pastikan upload screenshot webnya
-    color: "#10B981", // Warna Hijau (Segar/Hemat)
+    image: "/projects/resep-naks-kost.png",
+    color: "#10B981",
     tags: ["Next.js", "Tailwind CSS", "Shadcn UI", "Magic UI"],
     link: "https://resep-naks-kost.vercel.app/",
     github: "https://github.com/Naufal2376/Resep-Naks-Kost",

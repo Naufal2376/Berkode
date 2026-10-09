@@ -3,9 +3,10 @@
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone, MailIcon } from "lucide-react"
 import Image from "next/image"
-import { FaInstagram, FaWhatsapp } from "react-icons/fa"
+import { FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa"
+import { SITE } from "@/lib/site"
 
-// Data Link Footer (Disederhanakan untuk One Page)
+// Data Link Footer
 const footerLinks = {
   services: [
     { name: "Web Development", href: "#services" },
@@ -13,14 +14,13 @@ const footerLinks = {
     { name: "Mobile Apps", href: "#services" },
   ],
   company: [
-    { name: "Tentang Kami", href: "#home" }, // Arahkan ke Home dulu
+    { name: "Tentang Kami", href: "/tentang" },
     { name: "Portofolio", href: "#work" },
     { name: "Kontak", href: "#contact" },
   ],
-  // Legalitas (Penting untuk kesan profesional, walau link mati dulu gpp)
   legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
+    { name: "Kebijakan Privasi", href: "/privacy" },
+    { name: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
   ],
 }
 
@@ -103,8 +103,9 @@ export default function FooterSection() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <motion.a
-                href="https://wa.me/6283146867066?text=Halo%20BerKode,%20saya%20mau%20konsultasi%20project"
+                href={SITE.getWhatsappUrl("Halo BerKode, saya mau konsultasi project")}
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group px-8 py-4 bg-neon text-deep-navy font-bold rounded-xl hover:shadow-[0_0_40px_rgba(0,255,114,0.5)] transition-all flex items-center gap-2"
@@ -113,7 +114,7 @@ export default function FooterSection() {
                 Chat WhatsApp
               </motion.a>
               <motion.a
-                href="#"
+                href={SITE.getEmailUrl("Konsultasi Project")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-neon/50 text-white font-semibold rounded-xl hover:bg-neon/10 hover:border-neon transition-all flex items-center gap-2 backdrop-blur-sm"
@@ -162,9 +163,10 @@ export default function FooterSection() {
               </p>
               <div className="flex gap-3">
                 <motion.a
-                  href="https://instagram.com/berkode"
+                  href={SITE.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Instagram BerKode"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-lg bg-deep-navy/60 border border-mid-green/30 flex items-center justify-center text-gray-400 hover:text-neon hover:border-neon/50 transition-all"
@@ -172,9 +174,10 @@ export default function FooterSection() {
                   <FaInstagram className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="https://wa.me/6283146867066"
+                  href={SITE.getWhatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="WhatsApp BerKode"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-lg bg-deep-navy/60 border border-mid-green/30 flex items-center justify-center text-gray-400 hover:text-neon hover:border-neon/50 transition-all"
@@ -182,9 +185,19 @@ export default function FooterSection() {
                   <FaWhatsapp className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="#"
-                  // target="_blank"
-                  // rel="noopener noreferrer"
+                  href={SITE.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub BerKode"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 rounded-lg bg-deep-navy/60 border border-mid-green/30 flex items-center justify-center text-gray-400 hover:text-neon hover:border-neon/50 transition-all"
+                >
+                  <FaGithub className="w-5 h-5" />
+                </motion.a>
+                <motion.a
+                  href={SITE.getEmailUrl("Konsultasi Project")}
+                  aria-label="Email BerKode"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-lg bg-deep-navy/60 border border-mid-green/30 flex items-center justify-center text-gray-400 hover:text-neon hover:border-neon/50 transition-all"
@@ -229,7 +242,7 @@ export default function FooterSection() {
             <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">
               Perusahaan
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-6">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <a
@@ -241,17 +254,23 @@ export default function FooterSection() {
                   </a>
                 </li>
               ))}
-              {/* {footerLinks.legal.map((link) => (
+            </ul>
+
+            <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">
+              Legalitas
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 group cursor-not-allowed"
+                    className="text-sm text-gray-400 hover:text-neon transition-colors flex items-center gap-2 group"
                   >
-                    <span className="w-1 h-1 rounded-full bg-gray-600" />
+                    <span className="w-1 h-1 rounded-full bg-mid-green/50 group-hover:bg-neon transition-colors" />
                     {link.name}
                   </a>
                 </li>
-              ))} */}
+              ))}
             </ul>
           </motion.div>
         </div>

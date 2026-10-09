@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 import { ArrowRight, Code2, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { SITE } from "@/lib/site"
 
 // Floating geometric shapes data
 const floatingShapes = [
@@ -87,7 +88,10 @@ function FloatingShape({
         )
       case "code":
         return (
-          <div className="font-mono text-xs text-neon/30 whitespace-pre bg-deep-navy/50 p-3 rounded-lg border border-mid-green/20">
+          <div
+            aria-hidden="true"
+            className="font-mono text-xs text-neon/30 whitespace-pre bg-deep-navy/50 p-3 rounded-lg border border-mid-green/20"
+          >
             {codeSnippet}
           </div>
         )
@@ -98,6 +102,7 @@ function FloatingShape({
 
   return (
     <motion.div
+      aria-hidden="true"
       className="absolute pointer-events-none"
       style={{
         left: x,
@@ -271,8 +276,9 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20bikin%20website"
+            href={SITE.getWhatsappUrl("Halo BerKode, saya mau konsultasi project")}
             target="_blank"
+            rel="noopener noreferrer"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 30px rgba(0, 255, 114, 0.4)",

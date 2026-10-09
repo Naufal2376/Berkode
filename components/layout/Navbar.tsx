@@ -7,10 +7,11 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Work", href: "#work" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#home" },
+  { name: "Layanan", href: "/#services" },
+  { name: "Portofolio", href: "/#work" },
+  { name: "Tentang", href: "/tentang" },
+  { name: "Kontak", href: "/#contact" },
 ]
 
 export default function Navbar() {
@@ -44,7 +45,7 @@ export default function Navbar() {
         <nav className="flex items-center justify-between px-6 py-4">
           {/* Logo */}
           <motion.a
-            href="#home"
+            href="/#home"
             className="group flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

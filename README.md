@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BerKode — Digital Creative Partner
 
-## Getting Started
+Landing page resmi untuk **BerKode** (`berkode.my.id`), penyedia jasa pembuatan website, aplikasi sistem, dan desain UI/UX yang berfokus membantu UMKM, mahasiswa, dan startup untuk go digital dengan biaya transparan dan terjangkau.
 
-First, run the development server:
+Berbasis di **Palembang, Sumatera Selatan, Indonesia**.
 
+---
+
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Language**: TypeScript 5
+
+---
+
+## 🛠️ Memulai Development
+
+### 1. Prasyarat
+- Node.js versi 20 atau lebih baru
+- npm, pnpm, atau yarn
+
+### 2. Instalasi Dependensi
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Menjalankan Server Development
+```bash
+npm run dev
+```
+Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Build untuk Produksi
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Linting
+```bash
+npm run lint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Struktur Direktori
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+├── app/
+│   ├── layout.tsx         # Root layout, metadata global, fonts
+│   ├── page.tsx           # Halaman utama landing page
+│   ├── globals.css        # Global CSS Tailwind v4
+│   ├── sitemap.ts         # Dynamic sitemap untuk SEO
+│   ├── robots.ts          # Robots.txt
+│   ├── tentang/           # Halaman profil & tim BerKode
+│   ├── privacy/           # Kebijakan privasi
+│   ├── syarat-ketentuan/  # Syarat & ketentuan layanan
+│   └── not-found.tsx      # Custom 404 page
+├── components/
+│   ├── layout/            # Navbar, Navigation
+│   └── sections/          # Komponen section landing page
+├── lib/
+│   ├── site.ts            # Single source of truth info kontak & branding
+│   └── utils.ts           # Helper functions (cn)
+└── public/
+    ├── logo.png           # Logo BerKode
+    └── projects/          # Screenshot portofolio
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📞 Kontak & Informasi Bisnis
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Website**: [https://berkode.my.id](https://berkode.my.id)
+- **Email**: [halo@berkode.my.id](mailto:halo@berkode.my.id)
+- **WhatsApp**: [+62 831-4686-7066](https://wa.me/6283146867066)
+- **Instagram**: [@berkode](https://instagram.com/berkode)
+- **Lokasi**: Palembang, Sumatera Selatan, Indonesia
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+© 2024–2026 BerKode. All rights reserved.

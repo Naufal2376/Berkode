@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Palette, Smartphone, Check, ArrowUpRight } from "lucide-react"
+import { Code2, Palette, Smartphone, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { SITE } from "@/lib/site"
 
 const services = [
   {
@@ -17,8 +18,6 @@ const services = [
         subtitle:
           "Cocok untuk landing page sederhana atau kebutuhan tugas kuliah.",
         price: "Rp 150.000",
-        originalPrice: "Rp 250.000",
-        promo: true,
         duration: "3 - 5 Hari Kerja",
         features: [
           "Static Landing Page",
@@ -66,8 +65,6 @@ const services = [
         name: "Paket Pixel",
         subtitle: "Desain cepat untuk kebutuhan dasar.",
         price: "Rp 150.000",
-        originalPrice: "Rp 250.000",
-        promo: true,
         duration: "2 - 3 Hari Kerja",
         features: [
           "UI/UX Sederhana (Dashboard dan 3 halaman lainnya)",
@@ -266,23 +263,9 @@ export default function ServicesSection() {
 
                     {/* Price */}
                     <div className="mb-4">
-                      {pkg.promo && pkg.originalPrice ? (
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="text-2xl font-bold text-neon">
-                            {pkg.price}
-                          </span>
-                          <span className="text-sm text-gray-500 line-through">
-                            {pkg.originalPrice}
-                          </span>
-                          <span className="px-2 py-0.5 text-xs font-bold bg-red-500/20 text-red-400 rounded">
-                            PROMO
-                          </span>
-                        </div>
-                      ) : (
-                        <span className="text-2xl font-bold text-white">
-                          {pkg.price}
-                        </span>
-                      )}
+                      <span className="text-2xl font-bold text-white">
+                        {pkg.price}
+                      </span>
                       <p className="text-xs text-gray-500 mt-1 font-mono">
                         ⏱ {pkg.duration}
                       </p>
@@ -311,11 +294,16 @@ export default function ServicesSection() {
                     )}
 
                     {/* CTA Button - Always at bottom */}
-                    <motion.button
+                    <motion.a
+                      href={SITE.getWhatsappUrl(
+                        `Halo BerKode, saya tertarik dengan ${pkg.name} (${service.title})`
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className={cn(
-                        "w-full mt-auto px-4 py-2.5 rounded-lg font-semibold text-sm",
+                        "w-full mt-auto px-4 py-2.5 rounded-lg font-semibold text-sm text-center inline-block",
                         "transition-all duration-300",
                         idx === 1
                           ? "bg-neon text-deep-navy hover:shadow-lg hover:shadow-neon/30"
@@ -323,7 +311,7 @@ export default function ServicesSection() {
                       )}
                     >
                       Pesan Sekarang
-                    </motion.button>
+                    </motion.a>
                   </motion.div>
                 ))}
               </div>
